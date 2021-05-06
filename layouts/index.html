@@ -46,8 +46,7 @@
       {{ end }}
     </a>
   </span>
-  {{ if (and (and (isset .Site.Params "tagsoverview") (eq .Site.Params.tagsOverview true)) (gt (len
-  .Site.Taxonomies.tags) 0)) }}
+  {{ if (and (and (isset .Site.Params "tagsoverview") (eq .Site.Params.tagsOverview true)) (gt (len .Site.Taxonomies.tags) 0)) }}
   <span class="h2">Topics</span>
   <span class="widget tagcloud">
     {{ $AllRegularPagesCount := len .Site.RegularPages }}
