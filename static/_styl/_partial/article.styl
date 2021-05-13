@@ -20,8 +20,12 @@ article
       letter-spacing: .01em
       font-weight: 700
 
+    .article-read-time
+      display: inline
+
     .postdate
       display: inline
+
 
   .content
     h2:before
@@ -130,8 +134,13 @@ article
 
 @media (min-width: 480px)
   .article-tag,
-  .article-category
+  .article-category,
     display: inline
+
+    &:before
+      content: "|"
+
+  .article-read-time
 
     &:before
       content: "|"

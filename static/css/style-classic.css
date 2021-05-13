@@ -1206,13 +1206,12 @@ article .content .caption {
   background-repeat: repeat-x;
 }
 @media (min-width: 480px) {
-  .article-tag,
-  .article-category {
-    display: inline;
-  }
-  .article-read-time:before,
   .article-tag:before,
-  .article-category:before {
+  .article-category:before,
+  display: inline:before {
+    content: "|";
+  }
+  .article-read-time:before {
     content: "|";
   }
 }
