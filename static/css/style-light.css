@@ -472,6 +472,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
 }
+#header > a:hover {
+  text-shadow: unset;
+}
 .content {
   position: relative;
   display: flex;
@@ -500,12 +503,14 @@ body {
   background-repeat: repeat-x;
 }
 .content a:hover {
+  text-shadow: -0.02ex 0 #000, 0.02ex 0 #000;
   background-image: linear-gradient(transparent, transparent 4px, #2bbc8a 4px, #2bbc8a);
 }
 .content a.icon {
   background: none;
 }
 .content a.icon:hover {
+  text-shadow: unset;
   color: #2bbc8a;
 }
 .content h1 a,
