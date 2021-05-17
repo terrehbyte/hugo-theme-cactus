@@ -1,0 +1,11 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Regenerate Color themes",
+            "type": "shell",
+            "command": "./bin/build-css.sh",
+            "problemMatcher": []
+        }
+    ]
+}
