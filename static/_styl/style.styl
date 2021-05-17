@@ -35,6 +35,10 @@ body
 
   @extend $base-style
 
+#header > a
+  &:hover
+    text-shadow: unset
+
 .content
   position: relative
   display: flex
@@ -55,12 +59,14 @@ body
     underline(5px, $color-text)
 
     &:hover
+      text-shadow: -0.02ex 0 #000, 0.02ex 0 #000;
       background-image: linear-gradient(transparent, transparent 4px, $color-link 4px, $color-link)
 
   a.icon
     background: none
 
     &:hover
+      text-shadow: unset
       color: $color-link
 
   h1 a, .h1 a, h2 a, h3 a, h4 a, h5 a, h6 a
