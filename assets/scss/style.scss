@@ -99,6 +99,23 @@ body {
       @include underline(6px, $color-link);
     }
   }
+  .full-table table{
+    display: table;
+    width: 100%;
+  }
+
+  .flt-right > *
+  {
+    margin-left: auto;
+    float: right;
+    width: auto;
+  }
+
+  .flt-left > *
+  {
+    float: left;
+    width: auto;
+  }
 }
 @media (min-width: 540px) {
   .image-wrap {

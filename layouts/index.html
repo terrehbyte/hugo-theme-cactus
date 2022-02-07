@@ -1,10 +1,10 @@
 {{ define "main" }}
 <section id="about">
   {{ if isset .Site.Params "description" }}
-    {{ .Site.Params.description | $.Page.RenderString }}
+    {{ .Site.Params.description | $.Page.RenderString | emojify }}
   {{ end }}
   {{ if isset .Site.Params "social" }}
-      <p>Find me on
+      <p>Send me a message on
       {{ $length := (len .Site.Params.social) }}
       {{ range $index, $elem := .Site.Params.social}}
       {{ if eq $elem.name "email" }}
@@ -29,7 +29,7 @@
         {{ else if (lt (add $index 1) $length) }}
           {{- print " and " -}}
         {{ else }}
-          {{- print "." -}}
+          {{- print "!" -}}
         {{ end }}
       {{ end }}
       </p>
