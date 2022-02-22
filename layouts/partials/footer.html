@@ -1,6 +1,6 @@
 <footer id="footer">
   <div class="footer-left">
-    {{ if .Site.Copyright }} {{ .Site.Copyright | safeHTML }} {{ else }} Copyright &copy; {{ now.Format "2006" }} {{ print .Site.Title }} {{ end }}
+    Copyright  &copy; {{ now.Format "2006" }} {{ if .Site.Copyright }} {{ print .Site.Copyright | markdownify }} {{ else }} {{ print .Site.Title }} {{ end }}
   </div>
   <div class="footer-right">
     <nav>
