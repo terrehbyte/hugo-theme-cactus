@@ -4,11 +4,12 @@
 <body class="max-width mx-auto px3 ltr">
   <div class="content index py4">
 
+  {{ partial "page_nav.html" . }}
   {{ $showHeaderOnPosts := .Site.Params.showHeaderOnPosts | default false }}
   {{ if $showHeaderOnPosts }}
   {{ partial "header.html" . }}
   {{ end }}
-  {{ partial "page_nav.html" . }}
+  
 
   <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
     <header>
@@ -78,7 +79,7 @@
     </div>
     {{ end }}
     <div class="content" itemprop="articleBody">
-      {{ .Content}}
+      {{ partial "headline-hash.html" .Content}}
     </div>
   </article>
 

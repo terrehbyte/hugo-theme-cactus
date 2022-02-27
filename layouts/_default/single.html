@@ -5,7 +5,7 @@
   {{ if (eq .Type "search") }}
     <!-- TODO: search https://gohugo.io/tools/search/ -->
   {{ else }}
-    {{ .Content }}
+    {{ partial "headline-hash.html" .Content }}
   {{ end }}
   </div>
 </article>

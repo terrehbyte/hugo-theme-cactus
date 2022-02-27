@@ -38,3 +38,31 @@
     }
   }
 }
+
+#about, #writing
+{
+  > *
+  {
+    margin-top: 1rem;
+  }
+
+  > *:first-child
+  {
+    margin-top: 0;
+  }
+}
+
+#writing
+{
+  ul.post-list
+  {    
+    padding-left: 0;
+  }
+}
+
+.body-nav a
+{
+  font-size: .8em;
+  font-weight: 200;
+  color: #004E7A;
+}

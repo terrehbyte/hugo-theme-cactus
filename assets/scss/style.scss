@@ -1,3 +1,4 @@
+@import "reset";
 @import "variables";
 @import "colors/{{ site.Params.colortheme | default "white" }}";
 @import "util";
@@ -37,16 +38,36 @@ body {
 
   @extend $base-style !optional;
 }
+
+em, i
+{
+  font-style: italic;
+}
+
 .content {
   position: relative;
   display: flex;
   flex-direction: column;
   min-height: 100%;
-  overflow-wrap: break-word;
+  overflow-wrap: normal;
 
-  p {
-    @include hyphens(auto);
+  > *{
+    margin-top: 1.5rem;
   }
+
+  > section {
+    margin-top: 3rem;
+  }
+
+  > *:first-child {
+    margin-top: 0;
+  }
+
+  header + *, h1 + *, h2 + *
+  {
+    margin-top: 0;
+  }
+
   code {
     @include hyphens(manual);
   }
@@ -99,10 +120,23 @@ body {
       @include underline(6px, $color-link);
     }
   }
+
+  // lists
+  ul, ol {
+    padding-left: 40px;
+  }
+  p + ul, p + ol {
+    margin-top: .5rem;
+  }
+
+  // tables
+
   .full-table table{
     display: table;
     width: 100%;
   }
+
+  // floats
 
   .flt-right > *
   {
@@ -117,6 +151,7 @@ body {
     width: auto;
   }
 }
+
 @media (min-width: 540px) {
   .image-wrap {
     flex-direction: row;
@@ -142,12 +177,6 @@ body {
   .my4 {
     margin-top: 2rem;
     margin-bottom: 2rem;
-  }
-}
-
-@media (min-width: 480px) {
-  p {
-    text-align: justify;
   }
 }
 

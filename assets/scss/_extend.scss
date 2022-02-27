@@ -19,16 +19,17 @@ h2,
   margin-top: 2rem;
   margin-bottom: .5rem;
   color: $color-accent-2;
+  border-bottom: 1px solid lightgray;
   text-transform: none;
   letter-spacing: normal;
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 h3 {
   color: $color-accent-2;
-  text-decoration: underline;
+  border-bottom: 1px dotted lightgray;
   font-weight: bold;
-  font-size: .9rem;
+  font-size: 1.1rem;
 }
 h4
 h5
@@ -118,4 +119,11 @@ th {
 td {
   padding: 0 8px;
   border-bottom: none;
+}
+
+.content .headline-hash
+{
+  left: -1rem;
+  position: absolute;
+  color: $color-accent-1;
 }
