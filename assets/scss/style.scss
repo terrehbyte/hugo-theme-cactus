@@ -20,6 +20,7 @@ html {
   border-top: 2px solid $color-text;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
+  overflow-y: scroll;
 }
 body {
   margin: 0;
