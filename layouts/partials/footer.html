@@ -1,8 +1,8 @@
 <footer id="footer">
-  <div class="footer-left">
+  <div class="footer-copyright">
     Copyright  &copy; {{ now.Format "2006" }} {{ if .Site.Copyright }} {{ print .Site.Copyright | markdownify }} {{ else }} {{ print .Site.Title }} {{ end }}
   </div>
-  <div class="footer-right">
+  <div class="footer-menu">
     <nav>
       <ul>
         {{ range .Site.Menus.main }} 

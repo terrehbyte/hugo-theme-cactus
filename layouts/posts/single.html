@@ -84,9 +84,9 @@
   </article>
 
   {{ partial "comments.html" . }}
-
+{{ if .Site.Params.showMobileMenu }}
   {{ partial "page_nav_mobile.html" . }}
-
+{{ end }}
   {{ partial "footer.html" . }}
 
   </div>

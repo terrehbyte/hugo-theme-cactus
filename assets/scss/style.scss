@@ -176,8 +176,11 @@ em, i
 }
 @media (max-width: 480px) {  // smaller margins at smaller screen widths
   .px3 {
-    padding-right: 1rem;
-    padding-left: 1rem;
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+  }
+  .py4 {
+    padding-top: 2rem;
   }
   .my4 {
     margin-top: 2rem;
