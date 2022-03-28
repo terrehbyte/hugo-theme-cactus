@@ -1,0 +1,11 @@
+<div class="content index py4" id="mobile-nav">
+    <li class="icon">
+        <a href="#" aria-label="Menu"><i class="fas fa-bars fa-2x" aria-hidden="true"></i></a>
+    </li>
+    <ul class="options">
+        {{ range .Site.Menus.main }}
+        <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+        {{ end }}
+    </ul>
+    {{ partial "footer.html" . }}
+</div>

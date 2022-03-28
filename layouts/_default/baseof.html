@@ -1,8 +1,10 @@
+<!-- used for non post pages -->
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode }}">
 {{ partial "head.html" . }}
 <body class="max-width mx-auto px3 ltr">
-  <div class="content index py4">
+  {{ partial "nav_slideout.html" . }}
+  <div class="content index py4" id="user-content">
 
     {{ partial "header.html" . }}
 

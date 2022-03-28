@@ -15,8 +15,27 @@ $(document).ready(function() {
   /**
    * Shows the responsive navigation menu on mobile.
    */
-  $("#header > #nav > ul > .icon").click(function() {
-    $("#header > #nav > ul").toggleClass("responsive");
+  $("#header > #nav > ul > .icon").click(function () {
+    var menu = $("#mobile-nav");
+    var post = $("#user-content");
+
+    var shouldShowMenu = menu.css("display") === "none";
+
+    shouldShowMenu ? menu.show() : menu.hide();
+    shouldShowMenu ? post.hide() : post.show();
+  });
+
+  /**
+   * Hides the responsive navigation menu on mobile.
+   */
+  $("#mobile-nav > li > a").click(function () {
+    var menu = $("#mobile-nav");
+    var post = $("#user-content");
+
+    var shouldShowMenu = menu.css("display") === "none";
+
+    shouldShowMenu ? menu.show() : menu.hide();
+    shouldShowMenu ? post.hide() : post.show();
   });
 
 
