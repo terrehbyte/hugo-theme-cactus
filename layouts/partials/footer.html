@@ -1,6 +1,6 @@
 <footer id="footer">
   <div class="footer-copyright">
-    Copyright  &copy; {{ now.Format "2006" }} {{ if .Site.Copyright }} {{ print .Site.Copyright | markdownify }} {{ else }} {{ print .Site.Title }} {{ end }}
+    Copyright  &copy; {{ now.Format "2006" }} {{ if .Site.Copyright }} {{ print .Site.Copyright | markdownify }} {{ else }} {{ print .Site.Title }} {{ end }} {{ if .Site.Params.noticesSection }} | <a href="{{ .Site.Params.noticesSection | absURL }}" >{{ .Site.Params.noticesSectionTitle | default "NOTICES" }}</a> {{ end }}
   </div>
   <div class="footer-menu">
     <nav>
