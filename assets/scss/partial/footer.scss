@@ -1,5 +1,4 @@
 #footer {
-  position: absolute;
   bottom: 0;
   margin-bottom: 10px;
   width: 100%;
@@ -46,21 +45,39 @@
     line-height: 20px;
   }
 }
+
+// big screens
 @media (min-width: 39rem) {
   #footer {
     display: flex;
+    position: absolute;
     flex-flow: row wrap;
     justify-content: space-between;
     align-items: center;
     align-content: center;
     margin-bottom: 20px;
 
-    .footer-left {
+    .footer-copyright {
       align-self: flex-start;
       margin-right: 20px;
     }
-    .footer-right {
+    .footer-menu {
       align-self: flex-end;
     }
+  }
+}
+
+// small screens
+@media (max-width: 480px) {
+    #footer {
+      margin-top: 5em;
+      .footer-menu {
+        padding-top: 1.5em;
+        font-size: 1.25em;
+      }
+      .footer-copyright
+      {
+        float: bottom;
+      }
   }
 };

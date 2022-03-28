@@ -68,6 +68,11 @@ em, i
     margin-top: 0;
   }
 
+  > article:last-of-type
+  {
+    margin-bottom: 2em;
+  }
+
   header + *, h1 + *, h2 + *
   {
     margin-top: 0;
