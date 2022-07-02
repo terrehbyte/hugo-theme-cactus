@@ -23,13 +23,13 @@ h2,
   text-transform: none;
   letter-spacing: normal;
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
 }
 h3 {
   color: $color-accent-2;
-  border-bottom: 1px dotted lightgray;
-  font-weight: bold;
-  font-size: 1.1rem;
+  border-bottom: 2px dotted lightgray;
+  font-weight: 600;
+  font-size: 1.2rem;
 }
 h4
 h5
@@ -41,6 +41,11 @@ h6 {
   color: $color-accent-3;
   font-weight: bold;
   font-size: .9rem;
+}
+h4 {
+  font-weight: 500;
+  font-style: italic;
+  text-decoration: underline dotted 1px lightgray;
 }
 h3
 h4
@@ -126,4 +131,12 @@ td {
   left: -1rem;
   position: absolute;
   color: $color-accent-1;
+}
+
+.content 
+{  
+    h4 + *
+    {
+      margin-top: .4em;
+    }
 }
