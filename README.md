@@ -6,6 +6,39 @@ A hugo theme for personal blog. Fork from hexo theme [cactus](https://github.com
 
 Some works are still in progress. See [TODOS](#todos) below.
 
+## File Structure
+
+```text
+assets/
+  scss/
+    _extend.scss          base styles for raw html elements
+    _fonts.scss           add fonts here
+    _mixins.scss          common reusable rules (see scss @mixin and @include)
+    _reset.scss           css reset (reduce inconsistencies between browser defaults)
+    _util.scss            basscss css toolkit classes (basscss.com)
+    _variables.scss       user-modifiable theme variables
+    rtl.scss              RTL-support? (untested)
+    style.scss            >> this theme's styles go here <<
+
+exampleSite/              example site project
+
+images/                   example site images
+
+layouts/                  Hugo layouts
+  _default/               folder containing fallback templates used unless specified otherwise
+    baseof.html           base template for all pages
+    list.html             base template for all list pages (taxonomies, sections, etc.)
+    single.html           base template used to render Markdown files on a page
+    terms.html            base template for all taxonomy terms pages
+  
+  posts/                  folder containing templates used by posts
+    single.html           template for Markdown posts
+
+source/                   source files for image assets
+
+static/                   assets included as-is with the theme
+```
+
 ## Install
 
 1. clone cactus to your hugo site's `themes` folder.
@@ -290,7 +323,7 @@ Pagination on posts archive can be disabled to show all posts in chronological o
 - [x] Analytics
 - [ ] Local Search
 - [ ] toc template
-- [ ] Customizable copyright year
+- [x] Customizable copyright year
 - [ ] gallery
 - [ ] expose [mathjax configuration](https://docs.mathjax.org/en/latest/web/configuration.html#web-configuration) 
 
