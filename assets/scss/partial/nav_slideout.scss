@@ -11,6 +11,10 @@
         display: inline-block;
         font-size: 12.8px;
         text-decoration: none;
+        a
+        {
+            background-image: none;
+        }
     }
 
     #footer
@@ -35,5 +39,11 @@
         list-style-type: none;
         line-height: 3em;
         text-align: right;
+        a
+        {
+            color: $color-accent-1;
+            font-size:1.2rem;
+            font-weight: 400;
+        }
     }
 }
