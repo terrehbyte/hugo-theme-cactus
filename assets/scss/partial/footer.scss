@@ -46,8 +46,8 @@
   }
 }
 
-// big screens
-@media (min-width: 39rem) {
+// big screens - bottom header
+@media (min-width: $large-max-width) {
   #footer {
     display: flex;
     position: absolute;
@@ -67,8 +67,8 @@
   }
 }
 
-// small screens
-@media (max-width: 480px) {
+// small screens - docked centered header
+@media (max-width: $mobile-max-width) {
     #footer {
       margin-top: 5em;
       .footer-menu {

@@ -97,7 +97,7 @@
     }
   }
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: $mobile-max-width) {
   #header #title {
     display: table;
     margin-right: 5rem;

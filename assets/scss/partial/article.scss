@@ -132,7 +132,7 @@ article {
     @include underline(10px, $color-link);
   }
 }
-@media (min-width: 480px) {
+@media (min-width: $mobile-max-width) {
   .article-read-time,
   .article-tag,
   .article-category {

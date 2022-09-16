@@ -15,7 +15,7 @@
     }
   }
 }
-@media (min-width: 480px) {
+@media (min-width: $mobile-max-width) {
   .post-list {
     .post-item {
       display: flex;
