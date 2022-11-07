@@ -10,12 +10,18 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>{{ if .IsPage }} {{ .Title }} | {{ end }}{{ .Site.Title }}</title>
   <link rel = 'canonical' href = '{{ .Permalink }}'>
-  {{ with .Site.Params.description | emojify }}<meta name="description" content="{{ . }}">{{ end }}
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
   {{ template "_internal/opengraph.html" . }}
   {{ template "_internal/twitter_cards.html" . }}
+  {{ range .AlternativeOutputFormats -}}
+  {{ printf `
+  <link rel="%s"
+        type="%s"
+        href="%s"
+        title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+  {{ end -}}
   {{ .Scratch.Set "colortheme" "white"}}
   {{ if .Site.Params.Colortheme }}
     {{ .Scratch.Set "colortheme" .Site.Params.Colortheme }}
