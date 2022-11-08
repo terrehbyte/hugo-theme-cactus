@@ -1,0 +1,27 @@
+.table-height-2 td
+{
+    height: 2em;
+}
+
+.table-height-3 td {
+    height: 3em;
+}
+
+.table-height-4 td {
+    height: 3em;
+}
+
+.vertical-center *
+{
+    vertical-align: middle;
+}
+
+.width-full > *
+{
+    width: 100%;
+}
+
+.table-odd-background tr:nth-child(odd),
+.table-even-background tr:nth-child(even) {
+    background-color: darken($color-background, 5%);
+}

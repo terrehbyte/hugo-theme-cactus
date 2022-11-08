@@ -8,6 +8,13 @@
         {{ range .Site.Menus.main }} 
         <li><a href="{{ .URL }}">{{ .Name }}</a></li>
         {{ end }}
+        {{ with .OutputFormats.Get "rss" -}}
+        {{ printf `
+        <li>
+        <a rel="%s"
+           href="%s"/>RSS</a>` .Rel .Permalink | safeHTML }}
+        </li>
+        {{ end -}}
       </ul>
     </nav>
   </div>
