@@ -103,7 +103,7 @@
       {{ $projectsUrl = .Site.Params.projectsUrl }}
     {{ end }}
   <section id="projects">
-    <h2>Featured Projects</h2>
+    <h2>{{ .Site.Params.projectsSectionTitle | default "Projects" }}</h2>
     <ul class="project-list">
         {{ range .Site.Data.projects.list }}
           <!-- only show project if 'featured' is set and true -->
@@ -117,19 +117,20 @@
             </div>
             <div class="project-at-a-glance">
               <!-- only show if org is defined and isOrgHidden is not set -->
-              <span><strong>{{ .role }}</strong> {{ if and .org (not .isOrgHidden) }} at <strong>{{ .org }}</strong> {{ end }} - </span>
+              <span><strong>{{ .role }}</strong> {{ if .org }} at <strong>{{ .org }}</strong> {{ end }} - </span>
               {{ range .skills }}
               <span class="project-skill" >{{ . }}</span>
               {{ end }}
             </div>
             <span class="project-contribution">{{ .contribution }}</span>
           </li>
+          {{ break }}
           {{ end }}
         {{ end }}
     </ul>
     <span class="body-nav">
-    
-      <a href="{{ .Site.Params.projSection | absURL }}">All Projects -></a></span>
+      <!-- no absolute link because https://discourse.gohugo.io/t/link-to-page-anchor-only-relative-to-the-current-page/30967/3 -->
+      <a href="{{ .Site.Params.projSection }}">More Projects -></a></span>
   </section>
   {{ end }}
 {{ end }}
