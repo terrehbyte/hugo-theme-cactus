@@ -65,6 +65,7 @@
       position: absolute;
       bottom: 10%;
       left: .5em;
+      width: 80%;
 
       font-family: "Inter";
       font-weight: bolder;
@@ -73,6 +74,8 @@
       pointer-events: none;
 
       color: $color-link-darkbg;
+      white-space: nowrap;
+      text-overflow: ellipsis;
     }
 
     .project-at-a-glance
@@ -85,6 +88,7 @@
       background: rgba(0,0,0, 0.1);
       border-radius: 5px;
       padding: 0.2em;
+      white-space: nowrap;
     }
 
     .project-contribution
@@ -99,12 +103,14 @@
   }
 }
 
+/* mobile overrides */
 @media (max-width: $mobile-max-width) {
-.project-list {
-    .project-label {
-      font-size: 1em;
-    }
-}
+  .content
+    .project-list {
+      .project-label {
+        font-size: 1.5em;
+      }
+  }
 }
 
 #about, #writing, #projects
