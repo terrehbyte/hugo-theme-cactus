@@ -4,13 +4,53 @@
     {{ .Site.Params.intro | $.Page.RenderString | emojify }}
   {{ end }}
   <!-- update this and the shortcode template if using 'terrehbyte' website -->
+
   {{ if isset .Site.Params "social" }}
-      <p>Send me a message via
-      {{ $length := (len .Site.Params.social) }}
-      {{ range $index, $elem := .Site.Params.social}}
+      {{ $homeContacts := (where .Site.Params.social "home" true) }}
+      <p>Send me a message via 
+      {{ $length := len $homeContacts }}
+      {{ range $index, $elem := $homeContacts}}
         {{ if eq $elem.name "email" }}
         <a class="icon" target="{{ $elem.target | default "_blank" }}" rel="noopener" href="mailto:{{ $elem.link }}" aria-label="Email">
-          <i class="fas fa-envelope" aria-hidden="true"></i>
+          <i class="fas fa-envelope" aria-hidden="true"></i> <strong>{{ $elem.friendly_name | default $elem.name }}</strong>
+        </a>
+        {{ else if eq $elem.name "rss" }}
+        <a class="icon" target="{{ $elem.target | default "_blank" }}" rel="noopener" href="{{ $elem.link }}" aria-label="RSS">
+          <i class="fas fa-rss" aria-hidden="true"></i>
+        </a>
+        <!-- bluesky not available in FA yet - see https://github.com/FortAwesome/Font-Awesome/issues/19810 -->
+        {{ else if eq $elem.name "bsky" }}
+        <a class="icon" target="{{ $elem.target | default "_blank" }}" rel="noopener" href="{{ $elem.link }}" aria-label="RSS">
+          <i class="fas fa-square" aria-hidden="true"></i> <strong>{{ $elem.friendly_name | default $elem.name }}</strong>
+        </a>
+        {{ else if eq $elem.name "scholar" }}
+        <a class="icon" target="{{ $elem.target | default "_blank" }}" rel="noopener" href="{{ $elem.link }}" aria-label="Google Scholar">
+          <i class="fas fa-graduation-cap" aria-hidden="true"></i> <strong>{{ $elem.friendly_name | default $elem.name }}</strong>
+        </a>
+        {{ else if eq $elem.name "mastodon" }}
+        <a class="icon" target="{{ $elem.target | default "_blank" }}" rel="me" href="{{ $elem.link }}" aria-label="{{ $elem.name }}">
+          <i class="fab fa-{{ lower $elem.name }}" aria-hidden="true"></i> <strong>{{ $elem.friendly_name | default $elem.name }}</strong>
+        </a>
+        {{ else }}
+        <a class="icon" target="{{ $elem.target | default "_blank" }}" rel="noopener" href="{{ $elem.link }}" aria-label="{{ $elem.name }}">
+          <i class="fab fa-{{ lower $elem.name }}" aria-hidden="true"></i> <strong>{{ $elem.friendly_name | default $elem.name }}</strong>
+        </a>
+        {{ end }}
+        {{ if (lt (add $index 2) $length) }}
+          {{- print ", " -}}
+        {{ else if (lt (add $index 1) $length) }}
+          {{- print " or " -}}
+        {{ end }}
+      {{ end }}
+      or via socials on
+      {{ $v1 := where .Site.Params.social "home" "==" nil }}
+      {{ $v2 := where .Site.Params.social "home" "==" "false" }}
+      {{ $homeSocials := $v1 | append $v2 }}
+      {{ $length := len $homeSocials }}
+      {{ range $index, $elem := $homeSocials}}
+        {{ if eq $elem.name "email" }}
+        <a class="icon" target="{{ $elem.target | default "_blank" }}" rel="noopener" href="mailto:{{ $elem.link }}" aria-label="Email">
+          <i class="fas fa-envelope" aria-hidden="true"></i> <strong>{{ $elem.friendly_name | default $elem.name }}</strong> ({{ $elem.link }})
         </a>
         {{ else if eq $elem.name "rss" }}
         <a class="icon" target="{{ $elem.target | default "_blank" }}" rel="noopener" href="{{ $elem.link }}" aria-label="RSS">
@@ -35,13 +75,11 @@
         </a>
         {{ end }}
         {{ if (lt (add $index 2) $length) }}
-          {{- print " , " -}}
+          {{- print ", " -}}
         {{ else if (lt (add $index 1) $length) }}
           {{- print " or " -}}
-        {{ else }}
-          {{- print "!" -}}
         {{ end }}
-      {{ end }}
+      {{ end }}.
       </p>
   {{ end }}
   {{ partial "optional-about.html" . }}
