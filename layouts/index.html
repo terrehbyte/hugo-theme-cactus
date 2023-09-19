@@ -177,4 +177,12 @@
       <a href="{{ .Site.Params.projSection }}">More Projects -></a></span>
   </section>
   {{ end }}
+  {{ if isset .Site.Params "customsectionbody" }}
+  <section id="custom" >
+      {{ $optBlock := dict "display" "inline" }}
+      {{ .Site.Params.customSectionBody | $.Page.RenderString $optBlock | emojify }}
+      <br>
+      <span class="body-nav"><a href="{{ .Site.Params.customSectionNavLink | absURL }}">{{ .Site.Params.customSectionNavLinkLabel }} -></a></span>
+  </section>
+  {{ end }}
 {{ end }}
