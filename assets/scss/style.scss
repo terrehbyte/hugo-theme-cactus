@@ -81,6 +81,11 @@ em, i
     margin-top: 0;
   }
 
+  > p:first-of-type, header:first-of-type
+  {
+    margin-top: 0;
+  }
+
   > article:last-of-type
   {
     margin-bottom: 2em;

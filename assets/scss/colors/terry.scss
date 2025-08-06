@@ -19,7 +19,7 @@ $color-text: #383838;
 $color-accent-3: #8c8c8c;
 $color-accent-2: #383838;
 $color-accent-1: #004E7A;
-$color-quote: #004E7A;
+$color-quote: darken($color-text, 10%);
 
 // Font Overrides
 $font-family-body: "Inter", sans-serif;
