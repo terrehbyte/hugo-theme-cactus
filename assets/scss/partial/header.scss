@@ -65,6 +65,7 @@
       a {
         margin-right: 15px;
         color: $color-accent-1;
+        font-weight: 400;
       }
       a:hover {
         @include underline(5px, $color-accent-1);
