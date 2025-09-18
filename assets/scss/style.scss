@@ -40,10 +40,6 @@ body {
 
   @extend $base-style !optional;
 }
-a
-{
-  font-weight: 400;
-}
 
 em, i
 {
@@ -91,7 +87,13 @@ em, i
     margin-bottom: 2em;
   }
 
-  header + *, h1 + *, h2 + *
+  header + *, h1 + *, h2 + *, h3 + *
+  {
+    margin-top: 0;
+  }
+
+  // notices have their own margin
+  .notice + *
   {
     margin-top: 0;
   }
