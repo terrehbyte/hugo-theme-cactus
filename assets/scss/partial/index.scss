@@ -47,10 +47,12 @@
     .project-item {
       position: relative;
       width: 100%;
+      margin-bottom: .2em;
     }
 
     .project-img
     {
+      display: block;
       /* darkn imagen*/
       filter: brightness(50%);
       width: 100%;
