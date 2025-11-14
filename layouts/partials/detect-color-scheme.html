@@ -1,0 +1,8 @@
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const theme = (prefersDark ? 'dark' : 'light');
+
+        document.body.setAttribute('data-theme', theme);
+    });
+</script>

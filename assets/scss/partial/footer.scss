@@ -2,7 +2,7 @@
   bottom: 0;
   margin-bottom: 10px;
   width: 100%;
-  color: $color-meta;
+  color: var(--color-meta);
   vertical-align: top;
   text-align: center;
   font-size: 11px;
@@ -16,7 +16,7 @@
     display: inline-block;
     margin-right: 15px;
     border-right: 1px solid;
-    border-color: $color-border;
+    border-color: var(--color-border);
     vertical-align: middle;
 
     a {
@@ -32,12 +32,12 @@
     }
   }
   a {
-    color: $color-meta;
+    color: var(--color-meta);
     text-decoration: underline;
     background-image: none;
   }
   a:hover {
-    color: lighten($color-meta, 20%);
+    color: color-mix(in srgb, var(--color-meta) 80%, white 20%);
   }
   .footer-left {
     height: 20px;

@@ -14,25 +14,27 @@
 *:after {
   box-sizing: border-box;
 }
+
 html {
   margin: 0;
   padding: 0;
   height: 100%;
-  border-top: 2px solid $color-text;
+  border-top: 2px solid var(--color-text);
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   overflow-y: scroll;
 }
+
 body {
   margin: 0;
   height: 100%;
-  background-color: $color-background;
-  color: $color-text;
+  background-color: var(--color-background);
+  color: var(--color-text);
   font-display: swap;
   font-weight: 400;
-  font-size: $font-size;
-  font-family: $font-family-body;
-  line-height: $line-height;
+  font-size: var(--font-size);
+  font-family: var(--font-family-body);
+  line-height: var(--line-height);
   text-rendering: geometricPrecision;
   flex: 1;
 
@@ -41,15 +43,15 @@ body {
   @extend $base-style !optional;
 }
 
-em, i
-{
+em,
+i {
   font-style: italic;
 }
 
 .content .headline-hash {
   left: -1rem;
   position: absolute;
-  color: $color-accent-1;
+  color: var(--color-accent-1);
 }
 
 .content {
@@ -65,36 +67,35 @@ em, i
   min-height: 100%;
   overflow-wrap: normal;
 
-  > *{
+  >* {
     margin-top: 1.5rem;
   }
 
-  > section {
+  >section {
     margin-top: 3rem;
   }
 
-  > *:first-child {
+  >*:first-child {
     margin-top: 0;
   }
 
-  > p:first-of-type, header:first-of-type
-  {
+  >p:first-of-type,
+  header:first-of-type {
     margin-top: 0;
   }
 
-  > article:last-of-type
-  {
+  >article:last-of-type {
     margin-bottom: 2em;
   }
 
-  header + *, h1 + *, h2 + *, h3 + *
-  {
+  header+*,
+  h1+*,
+  h2+*,
+  h3+* {
     margin-top: 0;
   }
 
-  // notices have their own margin
-  .notice + *
-  {
+  .notice+* {
     margin-top: 0;
   }
 
@@ -102,20 +103,20 @@ em, i
     @include hyphens(manual);
   }
   a {
-    color: $color-text;
+    color: var(--color-text);
     text-decoration: none;
 
-    @include underline(5px, $color-text);
+    @include underline(5px, var(--color-text));
 
     &:hover {
-      background-image: linear-gradient(transparent, transparent 4px, $color-link 4px, $color-link);
+      background-image: linear-gradient(transparent, transparent 4px, var(--color-link) 4px, var(--color-link));
     }
   }
   a.icon {
     background: none;
 
     &:hover {
-      color: $color-link;
+      color: var(--color-link);
     }
   }
   h1 a,
@@ -136,7 +137,7 @@ em, i
   h4 a:hover,
   h5 a:hover,
   h6 a:hover {
-    @include underline(6px, $color-link);
+    @include underline(6px, var(--color-link));
   }
   h6 {
     a {
@@ -144,39 +145,34 @@ em, i
       color: inherit;
       text-decoration: none;
     }
-  }
-  h6 {
+
     a:hover {
-      @include underline(6px, $color-link);
+      @include underline(6px, var(--color-link));
     }
   }
 
-  // lists
-  ul, ol {
+  ul,
+  ol {
     padding-left: 40px;
   }
-  p + ul, p + ol {
+
+  p+ul,
+  p+ol {
     margin-top: .5rem;
   }
 
-  // tables
-
-  .full-table table{
+  .full-table table {
     display: table;
     width: 100%;
   }
 
-  // floats
-
-  .flt-right > *
-  {
+  .flt-right>* {
     margin-left: auto;
     float: right;
     width: auto;
   }
 
-  .flt-left > *
-  {
+  .flt-left>* {
     float: left;
     width: auto;
   }
@@ -197,9 +193,10 @@ em, i
   }
 }
 .max-width {
-  max-width: $page-width;
+  max-width: var(--page-width);
 }
-@media (max-width: $mobile-max-width) {  // smaller margins at smaller screen widths
+
+@media (max-width: $mobile-max-width) {
   .px3 {
     padding-right: 1.5rem;
     padding-left: 1.5rem;
@@ -231,11 +228,11 @@ em, i
 pre {
   overflow-x: auto;
   padding: 15px 15px 10px 15px;
-  border: 1px dotted $color-border;
+  border: 1px dotted var(--border);
   border-radius: 2px;
   -webkit-border-radius: 2px;
   font-size: 13px;
-  font-family: $font-family-mono;
+  font-family: var(--font-family-mono);
   line-height: 22px;
   position: relative;
 
@@ -251,7 +248,7 @@ pre {
     font-size: 0.9em;
     line-height: 1.7;
     color: #fff;
-    background-color: #8c8c8c;
+    background-color: var(--color-accent-3);
     min-width: 60px;
     text-align: center;
     cursor: pointer;
@@ -259,8 +256,8 @@ pre {
   }
 
   .code-copy-btn:hover {
-    background-color: #666;
-    color: #2bbc8a;
+    background-color: var(--border);
+    color: var(--color-cta);
   }
 
   code {
@@ -271,16 +268,15 @@ pre {
 }
 
 code {
-  font-family: $font-family-mono;
+  font-family: var(--font-family-mono);
   padding: 0 5px;
-  border: 1px dotted $color-border;
+  border: 1px dotted var(--border);
   border-radius: 2px;
   -webkit-border-radius: 2px;
 }
 
 .highlight {
-
-  & > div {
+  &>div {
     border-radius: 2px;
     -webkit-border-radius: 2px;
   }
@@ -291,7 +287,6 @@ code {
   }
 
   table {
-
     pre {
       margin-top: 0;
     }

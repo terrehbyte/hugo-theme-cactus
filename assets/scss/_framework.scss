@@ -48,7 +48,7 @@
 
     .table-odd-background tr:nth-child(odd),
     .table-even-background tr:nth-child(even) {
-        background-color: darken($color-background, 5%);
+        background-color: color-mix(in srgb, var(--color-background) 95%, black 5%);
     }
 
 

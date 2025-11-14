@@ -10,7 +10,7 @@
       display: block;
       margin-right: 16px;
       min-width: 100px;
-      color: $color-meta;
+      color: var(--color-meta);
       font-size: 14px;
     }
   }
@@ -75,7 +75,7 @@
 
       pointer-events: none;
 
-      color: $color-link-darkbg;
+      color: var(--color-link-darkbg);
       white-space: nowrap;
       text-overflow: ellipsis;
     }
@@ -139,5 +139,5 @@
 .body-nav a
 {
   font-size: .8em;
-  color: #004E7A;
+  color: var(--color-accent-1);
 }
