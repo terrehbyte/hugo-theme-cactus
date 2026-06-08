@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.LanguageCode }}">
+<html lang="{{ .Site.Language.Locale }}">
 {{ partial "head.html" . }}
 <body class="max-width mx-auto px3 ltr" data-theme="dark">
   {{ partial "nav_slideout.html" . }}
@@ -96,7 +96,7 @@
 <link rel="stylesheet" href={{ "/lib/font-awesome/css/all.min.css" | relURL }}>
 <script src={{ "/lib/jquery/jquery.min.js" | relURL }}></script>
 <script src={{ "/js/main.js" | relURL }}></script>
-{{ if not (isset site.Params "disablecopy") }}
+{{ if not (isset .Site.Params "disablecopy") }}
 <script src={{ "js/code-copy.js"  | relURL }}></script>
 {{ end }}
 {{ $mathjax := false }}

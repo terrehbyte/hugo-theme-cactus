@@ -1,5 +1,6 @@
 {{ define "main" }}
   <section id="about">
+  {{ .Site.Params.colortheme | default "white" }}
   {{ if isset .Site.Params "intro" }}
     {{ .Site.Params.intro | $.Page.RenderString | emojify }}
   {{ end }}
@@ -95,7 +96,7 @@
       {{ $showAllPostsOnHomePage = .Site.Params.ShowAllPostsOnHomePage }}
     {{ end }}
     {{ $dataFormat := .Site.Params.dateFormat | default "2006-01-02" }}
-    {{ $mainPosts := (sort ( where site.RegularPages "Type" "in" site.Params.mainSections ) "Date" "desc") }}
+    {{ $mainPosts := (sort ( where .Site.RegularPages "Type" "in" .Site.Params.mainSections ) "Date" "desc") }}
     {{ if $showAllPostsOnHomePage }}
     <ul class="post-list">
       {{ range (.Paginate $mainPosts).Pages }}
@@ -128,7 +129,7 @@
   {{ $showProjectsList := false }}
   {{ if (isset .Site.Params "showprojectslist") }}
     {{ $showProjectsList = .Site.Params.showProjectsList }}
-  {{ else if .Site.Data.projects }}
+  {{ else if hugo.Data.projects }}
     {{ $showProjectsList = true }}
   {{ end }}
   {{ if $showProjectsList }}
@@ -139,7 +140,7 @@
   <section id="projects">
     <h2>{{ .Site.Params.projectsSectionTitle | default "Projects" }}</h2>
     <ul class="project-list">
-        {{ range .Site.Data.projects.list }}
+        {{ range hugo.Data.projects.list }}
           <!-- only show project if 'featured' is set and true -->
           {{ if .featured }}
           <li>
